@@ -1,0 +1,64 @@
+---
+layout: default
+title: reddit search using angularjs with material design
+---
+
+<body lang="en" ng-app="StarterApp" layout="column" ng-controller="AppCtrl">
+
+    <md-content>
+
+        <md-toolbar layout="horizontal" layout-align="center center" class="md-primary">
+            <md-toolbar-tools>
+                <span class="md-flex">reddit search</span>
+            </md-toolbar-tools>
+        </md-toolbar>
+
+        <section>
+            <form ng-submit="search()" layout="column" layout-align="center center">
+                <div id="search-options" layout="row" layout-align="center center">
+                    <div>
+                        <md-input-container layout-align="center center">
+                            <label>Subreddit</label>
+                            <input ng-model="subreddit">
+                        </md-input-container>
+                        <md-input-container layout-align="center center">
+                            <label>Author</label>
+                            <input ng-model="author">
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-radio-group ng-model="nsfw">
+                            <md-radio-button value="">ALL RESULTS</md-radio-button>
+                            <md-radio-button value="no">SFW ONLY</md-radio-button>
+                            <md-radio-button value="yes">NSFW ONLY</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                </div>
+                <md-input-container layout-align="center center">
+                    <label>Search</label>
+                    <input ng-model="query">
+                </md-input-container>
+                <md-button role="submit" class="md-raised md-primary">Search</md-button>
+            </form>
+    
+            <section layout="vertical" layout-sm="horizontal" layout-align="center center" ng-show="results.length">
+                <p>[[results.length]] results</p>
+            </section>
+    
+            <section layout="vertical" layout-sm="horizontal" layout-align="center center">
+                <md-list>
+                    <md-item ng-repeat="result in results">
+                        <md-item-content layout-align="center center" ng-show="result">
+                            <div class="md-item-content">
+                                <h3>[[result.data.title]] by [[result.data.author]] in [[result.data.subreddit]]</h3>
+                            </div>
+                        </md-item-content>
+                    </md-item>
+                <md-list>
+            </section>
+        </section>
+
+    </md-content>
+
+</body>
+</html>
