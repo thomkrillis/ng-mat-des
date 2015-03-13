@@ -1,0 +1,8 @@
+# ng-mat-des
+AngularJS projects using Material Design
+
+These projects will be using [AngularJS](https://angularjs.org/) and Google's [Material Design](http://www.google.com/design/spec/material-design/introduction.html) as implemented by [Angular Material](https://material.angularjs.org/#/). Check out their [project on Github](https://github.com/angular/material).
+
+The first project is a [reddit](http://www.reddit.com/) search page, which can be viewed [here](http://thomkrillis.github.io/ng-mat-des/).
+
+Thanks to [Tuan Anh Tran](https://tuananh.org/2015/01/14/using-angularjs-with-jekyll/) for pointing out how to get around the common syntax between Jekyll and AngularJS.
