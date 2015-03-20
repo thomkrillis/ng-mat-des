@@ -1,4 +1,4 @@
-var app = angular.module('StarterApp', ['ngMaterial'])
+var app = angular.module('StarterApp', ['ngMaterial','httpFilter'])
   .config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');

@@ -14,7 +14,7 @@ title: reddit search using angularjs with material design
         </md-toolbar>
 
         <section>
-            <form ng-submit="search()" layout="column" layout-align="center center">
+            <form name="searchForm" ng-submit="search()" layout="column" layout-align="center center">
                 <div id="search-options" layout="row" layout-align="center center">
                     <div>
                         <md-input-container layout-align="center center">
@@ -40,18 +40,21 @@ title: reddit search using angularjs with material design
                 </md-input-container>
                 <md-button role="submit" class="md-raised md-primary">Search</md-button>
             </form>
-    
-            <section layout="vertical" layout-sm="horizontal" layout-align="center center" ng-show="results.length">
+
+            <section layout="vertical" layout-sm="horizontal" layout-align="center center">
                 <p>[[results.length]] results</p>
             </section>
-    
+
             <section layout="vertical" layout-sm="horizontal" layout-align="center center">
                 <md-list>
                     <md-item ng-repeat="result in results">
                         <md-item-content layout-align="center center" ng-show="result">
                             <div class="md-item-content">
-                                <h3>[[result.data.title]] by [[result.data.author]] in [[result.data.subreddit]]</h3>
+                                <a href="[[result.data.url | secureUrl]]">[[result.data.title]]</a>
+                                by <a href="https://www.reddit.com/u/[[result.data.author]]">[[result.data.author]]</a>
+                                in <a href="https://www.reddit.com/r/[[result.data.subreddit]]">[[result.data.subreddit]]</a>
                             </div>
+                            <br><br>
                         </md-item-content>
                     </md-item>
                 <md-list>
