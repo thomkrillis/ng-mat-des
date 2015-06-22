@@ -17,7 +17,7 @@ var app = angular.module('StarterApp', ['ngMaterial','httpFilter'])
     $scope.nsfw = '';
 
     $scope.search = function() {
-    var url = 'http://www.reddit.com/search.json?q=' + $scope.query;
+    var url = 'https://www.reddit.com/search.json?q=' + $scope.query;
     if ($scope.subreddit) {
       url += '+subreddit%3A' + $scope.subreddit;
     }
