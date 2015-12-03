@@ -50,7 +50,7 @@ title: reddit search using angularjs with material design
                     <md-item ng-repeat="result in results">
                         <md-item-content layout-align="center center" ng-show="result">
                             <div class="md-item-content">
-                                <a href="[[result.data.url | secureUrl]]">[[result.data.title]]</a>
+                                <a href="[[result.data.url]]">[[result.data.title]]</a>
                                 by <a href="https://www.reddit.com/u/[[result.data.author]]">[[result.data.author]]</a>
                                 in <a href="https://www.reddit.com/r/[[result.data.subreddit]]">[[result.data.subreddit]]</a>
                             </div>
